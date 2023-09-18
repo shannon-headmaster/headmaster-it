@@ -1,4 +1,4 @@
-# MeiliSearch官方介绍
+# MeiliSearch介绍
 
 MeiliSearch 技术文档 简介 MeiliSearch 是一个开源的全文搜索引擎，旨在提供快速、可靠的搜索体验。它是用 Rust 编写的，具有高性能和可扩展性。
 
