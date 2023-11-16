@@ -57,7 +57,7 @@ docker run -itd -p 7700:7700 -v /www/wwwroot/meilisearch/data:/meili_data getmei
 # 使用方式
 官方提供方式很多，而我使用的是Curl与PHP方式,主要侧重介绍PHP类库使用方式。使用方式如下：
 
-###1、命令行通过API形式使用。例如：
+### 1、命令行通过API形式使用。例如：
 添加文档
 ```
 curl \
@@ -86,7 +86,7 @@ API KEY填写正确，就可以正常访问：
 ![img_8.png](img_8.png)
 ![img_9.png](img_9.png)
 
-###**<div style="color:red;">2、PHP类库使用方式（重点介绍）<div>**
+### **<div style="color:red;">2、PHP类库使用方式（重点介绍）<div>**
 使用方法文档地址1：https://php-sdk.meilisearch.com/classes/Meilisearch-Endpoints-Delegates-HandlesDocuments.html#method_getDocument
 
 使用方法文档地址2(参考)：https://www.meilisearch.com/docs/reference/api/overview
@@ -98,7 +98,7 @@ API KEY填写正确，就可以正常访问：
 
 我的测试API KEY：php123456789
 
-#####准备工作
+#### 1、准备工作
 ```
     //链接客户端
     $client = new Client('http://localhost:7700', 'php123456789');
@@ -128,7 +128,7 @@ API KEY填写正确，就可以正常访问：
 这里php_job_001设置的文档索引key很重要，是后面数据获取的重要依据，这里我设置的是职位数据，所以key是php_job_001，这个key可以自己设置，但是要保证唯一性，不然会报错。
 
 ![img_13.png](img_13.png)
-#####1、添加文档
+#### 2、添加文档
 ```
     //添加文档
     $res=$index->addDocuments($data);
@@ -143,7 +143,7 @@ API KEY填写正确，就可以正常访问：
 ![img_15.png](img_15.png)
 程序实现查看文档添加成功方式有很多举一个例子
 直接获取文档内容
-#####2、获取全部或者单条文档内容
+#### 3、获取全部或者单条文档内容
 ```
     //获取单条文档内容
     $res = $index->getDocument(35);
@@ -158,7 +158,7 @@ API KEY填写正确，就可以正常访问：
 文档全部内容
 ![img_17.png](img_17.png)
 
-#####3、查看文档的配置信息
+#### 4、查看文档的配置信息
 ```
     //查看php_job_001这个文档的独立配置
     $res = $index->getSettings();
@@ -167,7 +167,7 @@ API KEY填写正确，就可以正常访问：
 
 使用方法与获取文档内容类似，其他的<span style="color:red;">简单方法</span>使用方式可以参考官方文档，这里就不一一介绍了。都是一些连贯式操作，找到准确的方法就能时间线简单操作。
 
-#####3、实现业务探索
+#### 5、实现业务探索
 首先文档中可以点滴滴找得到的，这里我只是进行整理一下。
 自身业务：职位中心B页面职位名称关键字搜索，要尽可能精确匹配，而且需要提高搜索效率与性能。
 
